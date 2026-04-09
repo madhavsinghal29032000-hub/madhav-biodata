@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Madhav Singhal | Biodata</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <style>
+        :root {
+            --bg: #fdfaf6;
+            --card: #ffffff;
+            --burgundy: #800020;
+            --text-dark: #1a1a1a;
+            --muted: #64748b;
+            --border: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-dark);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.5;
+            overflow-x: hidden;
+        }
+
+        .main-wrapper {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
+
+        /* Fixed Sidebar Logic for Desktop */
+        @media (min-width: 1024px) {
+            .main-wrapper {
+                grid-template-columns: 320px 1fr;
+                padding: 40px 20px;
+            }
+
+            .sidebar-fixed-wrap {
+                position: sticky;
+                top: 20px;
+                height: calc(100vh - 40px);
+                overflow-y: auto;
+                scrollbar-width: none;
+            }
+
+            .sidebar-fixed-wrap::-webkit-scrollbar {
+                display: none;
+            }
+        }
+
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Profile */
+        .profile-container {
+            text-align: center;
+            border-top: 6px solid var(--burgundy);
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--burgundy);
+            padding: 3px;
+            background: #fff;
+            margin-bottom: 16px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        h1 {
+            font-size: 1.6rem;
+            color: var(--burgundy);
+            margin-bottom: 4px;
+            font-weight: 800;
+        }
+
+        .tagline {
+            color: var(--burgundy);
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Section Titles */
+        .section-title {
+            font-size: 1.15rem;
+            color: var(--burgundy);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px solid var(--burgundy);
+            padding-bottom: 8px;
+        }
+
+        /* Info Grid */
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            padding: 8px 0;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .info-row:last-child {
+            border-bottom: none;
+        }
+
+        .label {
+            font-size: 0.7rem;
+            color: var(--muted);
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .value {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--burgundy);
+            text-align: right;
+        }
+
+        /* Hobbies */
+        .hobbies-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .hobby-item {
+            background: #fdf8f8;
+            border: 1px solid var(--burgundy);
+            padding: 4px 10px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            color: var(--burgundy);
+            font-weight: 600;
+        }
+
+        /* List Items */
+        .item-box {
+            display: flex;
+            gap: 15px;
+            padding: 14px;
+            background: #fdf8f8;
+            border-radius: 12px;
+            margin-bottom: 10px;
+            border-left: 4px solid var(--burgundy);
+        }
+
+        .item-icon {
+            color: var(--burgundy);
+            width: 20px;
+            text-align: center;
+            font-size: 0.95rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        /* Extended Family */
+        .family-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
+
+        @media (min-width: 640px) {
+            .family-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .ext-card {
+            padding: 10px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: #fff;
+        }
+
+        .ext-rel {
+            font-size: 0.65rem;
+            color: var(--burgundy);
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .ext-name {
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* Gallery */
+        .gallery-title {
+            font-size: 0.75rem;
+            color: var(--burgundy);
+            margin: 24px 0 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+            margin-top: 10px;
+        }
+
+        @media (min-width: 640px) {
+            .photo-gallery {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .gallery-img {
+            width: 100%;
+            aspect-ratio: 4 / 5;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 2px solid var(--burgundy);
+            display: block;
+            background: #fff;
+        }
+
+        /* Footer */
+        .footer-info {
+            background: #ffffff;
+            color: var(--text-dark);
+            border: 2px solid var(--burgundy);
+            border-radius: 16px;
+            padding: 25px;
+            margin-top: 24px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        @media (min-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .footer-label {
+            color: var(--burgundy);
+            font-weight: 800;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .footer-val {
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .tag {
+            background: var(--burgundy);
+            color: white;
+            padding: 1px 6px;
+            border-radius: 4px;
+            font-size: 0.6rem;
+            font-weight: 700;
+            margin-left: 5px;
+            vertical-align: middle;
+        }
+
+        /* Mobile Improvements */
+        @media (max-width: 480px) {
+            .card {
+                padding: 18px;
+            }
+
+            .profile-img {
+                width: 150px;
+                height: 150px;
+            }
+
+            h1 {
+                font-size: 1.4rem;
+            }
+
+            .info-row {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .value {
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-wrapper">
+        <!-- LEFT SIDEBAR WRAPPER -->
+        <div class="sidebar-fixed-wrap">
+            <div class="card profile-container">
+                <img src="main_photo.jpeg" alt="Madhav Singhal" class="profile-img" onerror="this.src='https://via.placeholder.com/200'" />
+                <h1>Madhav Singhal</h1>
+                <p class="tagline">Assistant Manager, CIL</p>
+            </div>
+
+            <div class="card">
+                <h2 class="section-title"><i class="fa-solid fa-address-card"></i> Personal Details</h2>
+                <div class="info-row"><span class="label">Date of Birth</span><span class="value">29 March 1999</span></div>
+                <div class="info-row"><span class="label">Place of Birth</span><span class="value">Dholpur, RJ</span></div>
+                <div class="info-row"><span class="label">Height</span><span class="value">5' 8"</span></div>
+                <div class="info-row"><span class="label">Body Type</span><span class="value">Muscular</span></div>
+                <div class="info-row"><span class="label">Diet</span><span class="value">Vegetarian</span></div>
+            </div>
+
+            <div class="card">
+                <h2 class="section-title"><i class="fa-solid fa-heart"></i> Hobbies</h2>
+                <div class="hobbies-grid">
+                    <span class="hobby-item">🏸 Badminton</span>
+                    <span class="hobby-item">✈️ Travelling</span>
+                    <span class="hobby-item">💪 Gym</span>
+                    <span class="hobby-item">🎶 Music</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT CONTENT AREA -->
+        <div class="content">
+            <!-- ABOUT ME -->
+            <div class="card">
+                <h2 class="section-title"><i class="fa-solid fa-quote-left"></i> A Brief Introduction</h2>
+                <p style="color: #333; font-size: 1rem;">
+                    Simple, caring, and family-oriented, I value meaningful relationships and cherish time spent with loved ones.
+                    My interests lie in the simple joys of life, from working out in the gym to exploring new places.
+                </p>
+            </div>
+
+            <!-- ROOTS -->
+            <div class="card">
+                <h2 class="section-title"><i class="fa-solid fa-landmark"></i> Roots & Heritage</h2>
+                <div class="family-grid">
+                    <div class="info-row" style="border:none; padding: 4px 0;"><span class="label">Religion</span><span class="value">Hindu</span></div>
+                    <div class="info-row" style="border:none; padding: 4px 0;"><span class="label">Caste</span><span class="value">Vaishya</span></div>
+                    <div class="info-row" style="border:none; padding: 4px 0;"><span class="label">Gotra</span><span class="value">Singhal</span></div>
+                    <div class="info-row" style="border:none; padding: 4px 0;"><span class="label">Zodiac Sign</span><span class="value">Leo</span></div>
+                </div>
+            </div>
+
+            <!-- CAREER -->
+            <div class="card">
+                <h2 class="section-title"><i class="fa-solid fa-graduation-cap"></i> Professional Journey</h2>
+                <div class="item-box">
+                    <div class="item-icon"><i class="fa-solid fa-briefcase"></i></div>
+                    <div>
+                        <p class="value" style="text-align:left;">Assistant Manager, Coal India Ltd (CIL)</p>
+                        <p class="label">Professional Role</p>
+                    </div>
+                </div>
+                <div class="item-box">
+                    <div class="item-icon"><i class="fa-solid fa-award"></i></div>
+                    <div>
+                        <p class="value" style="text-align:left;">B.Tech (Mining), IIT (ISM) Dhanbad</p>
+                        <p class="label">Batch 2022 | Gold Medalist</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAMILY -->
+            <div class="card">
+                <h2 class="section-title"><i class="fa-solid fa-users"></i> Family Details</h2>
+
+                <div class="item-box">
+                    <div class="item-icon"><i class="fa-solid fa-user-tie"></i></div>
+                    <div>
+                        <p class="value" style="text-align:left;">Shri K. Kumar Singhal (Father)</p>
+                        <p class="label">Businessman, Krishna Oil & Flour Mill</p>
+                    </div>
+                </div>
+
+                <div class="item-box">
+                    <div class="item-icon"><i class="fa-solid fa-house-user"></i></div>
+                    <div>
+                        <p class="value" style="text-align:left;">Smt. Mamta Singhal (Mother)</p>
+                        <p class="label">Homemaker</p>
+                    </div>
+                </div>
+
+                <div class="item-box">
+                    <div class="item-icon"><i class="fa-solid fa-user-check"></i></div>
+                    <div>
+                        <p class="value" style="text-align:left;">Madhvi Singhal (Elder Sister)<span class="tag">Officer</span></p>
+                        <p class="label">EO/AO at EPFO</p>
+                    </div>
+                </div>
+
+                <div class="item-box">
+                    <div class="item-icon"><i class="fa-solid fa-stethoscope"></i></div>
+                    <div>
+                        <p class="value" style="text-align:left;">Ruchika Singhal (Younger Sister)<span class="tag">Doctor</span></p>
+                        <p class="label">MBBS Student</p>
+                    </div>
+                </div>
+
+                <p class="gallery-title">Extended Family</p>
+                <div class="family-grid">
+                    <div class="ext-card"><p class="ext-rel">Grandparents</p><p class="ext-name">Late Shri Ramgopal & Smt. Kishori Devi</p></div>
+                    <div class="ext-card"><p class="ext-rel">Chacha & Chachi</p><p class="ext-name">Haridarshan & Vimlesh Singhal</p></div>
+                    <div class="ext-card"><p class="ext-rel">Bua & Fufa (Dholpur)</p><p class="ext-name">Mithilesh & Mukesh Bansal</p></div>
+                    <div class="ext-card"><p class="ext-rel">Bua & Fufa (Morena)</p><p class="ext-name">Kamlesh & Vishnu Bansal</p></div>
+                    <div class="ext-card"><p class="ext-rel">Mama Ji</p><p class="ext-name">Rakesh, Mukesh & Murari Mittal</p></div>
+                </div>
+
+                <p class="gallery-title">Family Photos</p>
+                <div class="photo-gallery">
+                    <img src="photo1.jpeg" alt="Family Photo 1" class="gallery-img" onerror="this.src='https://via.placeholder.com/300x400'" />
+                    <img src="photo2.jpeg" alt="Family Photo 2" class="gallery-img" onerror="this.src='https://via.placeholder.com/300x400'" />
+                </div>
+            </div>
+
+            <!-- FOOTER CONTACT -->
+            <div class="footer-info">
+                <div class="footer-grid">
+                    <div>
+                        <p class="footer-label">Father's Contact</p>
+                        <p class="footer-val">+91 99288 41998</p>
+                        <p style="font-size: 0.85rem; color: #444;">Shri Krishna Kumar Singhal</p>
+                    </div>
+                    <div>
+                        <p class="footer-label">Residential Address</p>
+                        <p class="footer-val" style="font-size: 0.95rem; color: #000;">Sarani Khera, Dholpur, Rajasthan - 328030</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
